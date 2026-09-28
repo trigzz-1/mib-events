@@ -1,0 +1,174 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>MIB Events | Make In BVB</title><meta name="description" content="Discover, register for and remember every Make In BVB hackathon, bootcamp, workshop and talk.">
+<meta name="theme-color" content="#5B0A1A"><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%235B0A1A'/%3E%3Cpath d='M6 24V8h4l6 8 6-8h4v16h-4V15l-6 8-6-8v9z' fill='%23E8384F'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0}
+:root{--red:#C8102E;--r2:#E8384F;--wine:#5B0A1A;--bg:#FFF5F3;--sf:#fff;--tx:#2A0A10;--mu:#7A5158;--bd:#F1D6D3;--ok:#0B7A55;--wn:#9A5B00;color-scheme:light}
+[data-t=dark]{--red:#F0435A;--bg:#14050A;--sf:#22090F;--tx:#FBE9E7;--mu:#C99EA3;--bd:#42191F;--ok:#4ADE9F;--wn:#FBBF24;color-scheme:dark}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{font:16px/1.6 Inter,system-ui,sans-serif;background:var(--bg);color:var(--tx);padding-top:env(safe-area-inset-top)}
+h1,h2,h3{font-family:'Plus Jakarta Sans',Inter,sans-serif;line-height:1.12;letter-spacing:-.02em}
+a{color:inherit}button,input,select,textarea{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--r2);outline-offset:2px}
+.w{max-width:1160px;margin:auto;padding:0 20px}section{padding:72px 0}
+h2{font-size:clamp(26px,4vw,38px);font-weight:800;margin-bottom:8px}.sub{color:var(--mu);max-width:60ch;margin-bottom:28px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:44px;padding:0 20px;border-radius:12px;border:2px solid #C8102E;background:#C8102E;color:#fff;font-weight:600;cursor:pointer;text-decoration:none;transition:transform .15s,background .15s}
+.btn:hover{transform:translateY(-1px);background:#A50D26}.btn[disabled]{opacity:.5;cursor:not-allowed;transform:none}
+.gh{background:transparent;color:var(--tx);border-color:var(--bd)}.gh:hover{background:var(--bd)}
+.wh{background:#fff;color:#5B0A1A;border-color:#fff}.wh:hover{background:#FFE3E0}.ol{background:transparent;color:#fff;border-color:#ffffff88}.ol:hover{background:#ffffff22}
+nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:blur(14px);border-bottom:1px solid var(--bd)}
+nav .w{display:flex;align-items:center;gap:8px;height:64px}.logo{font:800 20px 'Plus Jakarta Sans';text-decoration:none;margin-right:auto;display:flex;gap:8px;align-items:center}
+.lg{position:relative;width:34px;height:34px;flex:none}.lg i,.lg img{position:absolute;inset:0;width:100%;height:100%;border-radius:10px;object-fit:cover}.lg i{background:linear-gradient(135deg,#5B0A1A 50%,#C8102E 50%)}
+.lk{display:flex;gap:4px}.lk a{padding:8px 12px;border-radius:10px;text-decoration:none;font-weight:500}.lk a:hover{background:var(--bd)}
+.ib{min-width:44px;height:44px;border-radius:12px;border:1px solid var(--bd);background:var(--sf);cursor:pointer;font-weight:600;padding:0 12px}
+#mb{display:none}
+@media(max-width:820px){#mb{display:block}.lk{display:none;position:absolute;top:64px;left:0;right:0;flex-direction:column;background:var(--bg);padding:12px 20px;border-bottom:1px solid var(--bd)}.lk.on{display:flex}.lk a{padding:14px 8px}}
+.hero{color:#fff;padding:64px 0 0;background:linear-gradient(105deg,#5B0A1A 0 58%,#C8102E 58%)}
+@media(max-width:860px){.hero{background:linear-gradient(180deg,#5B0A1A 0 60%,#C8102E 60%)}}
+.hg{display:grid;gap:36px;grid-template-columns:1.25fr 1fr;align-items:center;padding-bottom:48px}@media(max-width:860px){.hg{grid-template-columns:1fr}}
+.hero h1{font-size:clamp(38px,6.4vw,68px);font-weight:800}.hero p.l{font-size:18px;margin:18px 0 26px;max-width:46ch;color:#FFE3E0}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.cd{background:var(--sf);color:var(--tx);border-radius:20px;padding:24px;box-shadow:0 24px 60px #2a000a55;position:relative}
+.cd::before,.cd::after{content:"";position:absolute;top:50%;width:22px;height:22px;border-radius:50%;background:#8b0a22;margin-top:-11px}.cd::before{left:-11px}.cd::after{right:-11px}
+.cd h3{font-size:22px;margin:4px 0 14px}.cd small{color:var(--mu)}
+.tm{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:16px}.tm div{background:var(--bg);border-radius:12px;text-align:center;padding:10px 0}.tm b{display:block;font:800 28px 'Plus Jakarta Sans';color:var(--red)}.tm span{font-size:12px;color:var(--mu)}
+.st{background:#3a0611;color:#fff}.st .w{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;padding-top:26px;padding-bottom:26px;text-align:center}
+.st b{display:block;font:800 clamp(24px,4vw,38px) 'Plus Jakarta Sans'}.st span{color:#F5B8BF;font-size:14px}
+.fb{display:grid;gap:14px;margin-bottom:26px}.sr{position:relative}.sr input{width:100%;height:52px;padding:0 16px;border-radius:14px;border:2px solid var(--bd);background:var(--sf)}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}.pl{padding:8px 16px;min-height:40px;border-radius:99px;border:1px solid var(--bd);background:var(--sf);cursor:pointer;font-weight:500}
+.pl.on{background:#C8102E;border-color:#C8102E;color:#fff}.seg{margin-left:auto;display:flex;background:var(--sf);border:1px solid var(--bd);border-radius:12px;padding:3px}.seg .pl{border:0;border-radius:9px;background:transparent}
+@media(max-width:700px){.seg{margin-left:0}}
+.grid{display:grid;gap:22px;grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+.card{background:var(--sf);border:1px solid var(--bd);border-radius:20px;overflow:hidden;display:flex;flex-direction:column}
+.bn{aspect-ratio:16/9;position:relative;color:#fff;padding:16px;display:flex;flex-direction:column;justify-content:flex-end;background:linear-gradient(var(--a),#5B0A1A 0 52%,#C8102E 52%)}
+.bn b{font:800 44px/1 'Plus Jakarta Sans'}.bn span{font-weight:600}.bn i{position:absolute;right:14px;bottom:14px;font-style:normal;font:700 13px 'Plus Jakarta Sans';background:#00000040;padding:4px 10px;border-radius:99px}
+.bm{position:absolute;top:10px;right:10px;width:44px;height:44px;border-radius:50%;border:0;background:#ffffffee;color:#C8102E;font-size:22px;cursor:pointer}
+.cb{padding:18px;display:flex;flex-direction:column;gap:10px;flex:1}.cb h3{font-size:20px}.cb p{color:var(--mu);font-size:15px}
+.bg{display:flex;gap:6px;flex-wrap:wrap}.b{font-size:12px;font-weight:600;padding:3px 10px;border-radius:99px;border:1px solid var(--bd)}
+.bo{color:var(--ok);border-color:var(--ok)}.bw{color:var(--wn);border-color:var(--wn)}.bc{color:var(--mu)}
+.mt{font-size:14px;color:var(--mu);display:grid;gap:2px}.ac{display:flex;gap:8px;margin-top:auto;padding-top:6px;flex-wrap:wrap}.ac .btn{flex:1;padding:0 12px}
+.empty{grid-column:1/-1;text-align:center;padding:56px 16px;border:2px dashed var(--bd);border-radius:20px}.empty p{margin:8px 0 18px;color:var(--mu)}
+.pw{background:var(--sf);border-block:1px solid var(--bd)}.win{background:#5B0A1A;color:#fff;padding:10px 18px;font-size:14px}
+.gal{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 0 14px;margin-top:26px}
+.gal figure{flex:0 0 min(280px,78%);scroll-snap-align:start;aspect-ratio:4/3;border-radius:16px;color:#fff;padding:14px;display:flex;align-items:flex-end;font-weight:600;background:linear-gradient(var(--a),#5B0A1A 0 55%,#C8102E 55%)}
+.pg{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}.pc{padding:22px;border-radius:18px;background:var(--sf);border:1px solid var(--bd)}.pc h3{font-size:19px;margin-bottom:6px}.pc p{color:var(--mu);font-size:15px}
+.pc:nth-child(odd){border-top:5px solid #C8102E}.pc:nth-child(even){border-top:5px solid #5B0A1A}
+.cg{display:grid;gap:36px;grid-template-columns:1.1fr 1fr}@media(max-width:820px){.cg{grid-template-columns:1fr}}
+form{display:grid;gap:14px}label{display:grid;gap:4px;font-weight:600;font-size:14px}
+input,select,textarea{width:100%;min-height:46px;padding:10px 14px;border-radius:12px;border:1.5px solid var(--bd);background:var(--sf);font-weight:400}
+.er{color:var(--red);font-weight:500;min-height:0}.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+details{border-bottom:1px solid var(--bd);padding:14px 0}summary{font-weight:600;cursor:pointer}details p{color:var(--mu);margin-top:8px}
+.so{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}
+footer{background:#3a0611;color:#F5B8BF;padding:32px 0;font-size:14px}footer .w{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.ov{position:fixed;inset:0;z-index:50;background:#1a020a99;display:grid;place-items:center;padding:16px;overflow:auto}.ov[hidden]{display:none}
+.mo{background:var(--bg);width:min(680px,100%);max-height:92vh;overflow:auto;border-radius:22px;padding:24px;position:relative;animation:pop .2s}.mo>#mc>*+*{margin-top:14px}
+@keyframes pop{from{transform:translateY(14px);opacity:0}}
+.x{position:sticky;top:0;float:right;z-index:2;width:44px;height:44px;border-radius:50%;border:0;background:var(--sf);font-size:24px;cursor:pointer;margin:-8px -8px 0 0}
+.mo .bn{border-radius:14px}.mg{display:grid;grid-template-columns:1fr 1fr;gap:10px}@media(max-width:560px){.mg,.two{grid-template-columns:1fr}}.mg div{background:var(--sf);border-radius:12px;padding:10px 14px}.mg dt{font-size:12px;color:var(--mu)}.mg dd{margin:0;font-weight:600}
+.ag{list-style:none;padding:0;border-left:3px solid #C8102E;display:grid;gap:8px;padding-left:14px}.ag b{display:block;font-size:13px;color:var(--red)}
+.tk{display:grid;grid-template-columns:1.5fr 1fr;border-radius:18px;overflow:hidden;color:#fff;box-shadow:0 14px 40px #5b0a1a44}@media(max-width:560px){.tk{grid-template-columns:1fr}}
+.tk>div:first-child{background:#5B0A1A;padding:20px;display:grid;gap:4px}.tk>div:first-child h3{font-size:22px}.tk>div+div{background:#C8102E;padding:20px;display:grid;justify-items:center;gap:8px;border-left:3px dashed #ffffff88}
+.tk svg{width:120px;background:#fff;padding:6px;border-radius:8px}.tk code{font:700 15px monospace;letter-spacing:1px}
+#ts{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:#5B0A1A;color:#fff;padding:12px 20px;border-radius:12px;z-index:60;opacity:0;pointer-events:none;transition:opacity .2s;max-width:90vw}#ts.on{opacity:1}
+.bn{overflow:hidden}.bn img,.gal img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.55)}.bn b,.bn span,.gal span{position:relative}.gal figure{position:relative;overflow:hidden}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style></head><body>
+<nav><div class="w"><a class="logo" href="#top"><span class="lg"><i></i><img src="https://media.licdn.com/dms/image/v2/D560BAQHZwwlyPuifcw/company-logo_200_200/company-logo_200_200/0/1683996994815?e=2147483647&v=beta&t=YopiRcvJB2Rm5Mh-9JOhaDyFyXdFPBbzRH-rKtnrDh4" alt="Make In BVB logo" referrerpolicy="no-referrer" onerror="this.remove()"></span>MIB Events</a>
+<div class="lk" id="lk"><a href="#events">Events</a><a href="#highlights">Highlights</a><a href="#about">About</a><a href="#contact">Contact</a></div>
+<button class="ib" data-a="tks" aria-label="My tickets">Tickets <span id="tc">0</span></button><button class="ib" data-a="th" aria-label="Toggle dark or light theme">Theme</button><button class="ib" id="mb" data-a="mn" aria-label="Menu" aria-expanded="false">Menu</button></div></nav>
+<main id="top">
+<header class="hero"><div class="w hg"><div><h1>Every MIB event, in one place.</h1><p class="l">Inspiring minds to innovate. Find workshops, competitions and flagship events from Make In BVB, register in a minute, and walk in with your pass.</p>
+<div class="cta"><a class="btn wh" href="#events">Explore events</a><a class="btn ol" href="#contact">Join MIB community</a></div></div>
+<div class="cd" id="cdw"><small>Next registration deadline</small><h3 id="cdt">Loading</h3><div class="tm"><div><b id="d">0</b><span>days</span></div><div><b id="h">0</b><span>hours</span></div><div><b id="m">0</b><span>min</span></div><div><b id="s">0</b><span>sec</span></div></div><button class="btn" style="width:100%" id="cdb" data-a="reg">Register now</button></div></div>
+<div class="st"><div class="w"><div><b data-n="12" data-s="+">0</b><span>Years of MIB, since 2014</span></div><div><b data-n="400" data-s="+">0</b><span>Teams in a PUPA season</span></div><div><b data-n="1000" data-s="+">0</b><span>People at final showcases</span></div></div></div></header>
+<section id="events"><div class="w"><h2>Find your next build</h2><p class="sub">Search by name or tag, filter by type, and save events to come back to. Upcoming dates are placeholders until MIB announces its next schedule.</p>
+<div class="fb"><div class="sr"><input id="q" type="search" placeholder="Search events, tags or topics" aria-label="Search events"></div>
+<div class="row" id="cats"></div><div class="row"><div class="seg" style="margin:0" id="tls"></div><button class="pl" data-a="sv" id="svb">Saved (<span id="sc">0</span>)</button><span id="cnt" style="color:var(--mu);font-size:14px" aria-live="polite"></span></div></div>
+<div class="grid" id="grid"></div></div></section>
+<section id="highlights" class="pw"><div class="w"><h2>Past highlights</h2><p class="sub">What MIB has shipped so far: winners, turnout and moments from previous events.</p><div class="grid" id="past"></div>
+<div class="row" style="margin-top:26px;justify-content:space-between"><h3>Gallery</h3><div class="row"><button class="ib" data-a="gl" data-v="-1" aria-label="Previous photos">&lsaquo;</button><button class="ib" data-a="gl" data-v="1" aria-label="Next photos">&rsaquo;</button></div></div><div class="gal" id="gal" tabindex="0" aria-label="Photo gallery"></div></div></section>
+<section id="about"><div class="w"><h2>About Make In BVB</h2><p class="sub">Make In BVB (MIB) is the student body of KLE CTIE at KLE Technological University, Hubballi. Since 2014 it has run workshops, competitions and flagship events like PUPA, E-Summit and Butterfly to help students turn ideas into products.</p>
+<div class="pg"><div class="pc"><h3>Software cluster</h3><p>Web, app and AI products, plus the platforms MIB runs on all year.</p></div><div class="pc"><h3>Design cluster</h3><p>Brand, UI and UX for MIB projects, and design sprints for everyone.</p></div><div class="pc"><h3>Hardware and IoT</h3><p>Circuits, sensors and prototypes built in the lab and demoed live.</p></div><div class="pc"><h3>Operations</h3><p>Logistics, sponsors and outreach that keep every event running.</p></div></div><div class="so"><a class="btn gh" target="_blank" rel="noopener" href="https://www.makeinbvb.com/">MIB website</a><a class="btn gh" target="_blank" rel="noopener" href="https://www.klectie.com/initatives/make-in-bvb.php">KLE CTIE page</a><a class="btn gh" target="_blank" rel="noopener" href="https://makeinbvb.medium.com/about">MIB on Medium</a><a class="btn gh" target="_blank" rel="noopener" href="https://www.youtube.com/channel/UC27F_GDdhqJlw488T0pMIxQ">YouTube</a></div></div></section>
+<section id="contact" class="pw"><div class="w cg"><div><h2>Questions? Ask us.</h2><p class="sub">Send a message and the MIB team will reply by email. Common answers are on the right.</p>
+<form id="cf" novalidate><div class="two"><label>Name<input name="n" autocomplete="name"><small class="er" data-e="n"></small></label><label>Email<input name="e" type="email" autocomplete="email"><small class="er" data-e="e"></small></label></div>
+<label>Subject<input name="s"><small class="er" data-e="s"></small></label><label>Message<textarea name="m" rows="4"></textarea><small class="er" data-e="m"></small></label><button class="btn" style="justify-self:start">Send message</button></form>
+<div class="so"><a class="btn gh" target="_blank" rel="noopener" href="https://in.linkedin.com/company/makeinbvb">LinkedIn</a><a class="btn gh" target="_blank" rel="noopener" href="https://www.instagram.com/makeinbvb/">Instagram</a><a class="btn gh" target="_blank" rel="noopener" href="https://www.youtube.com/channel/UC27F_GDdhqJlw488T0pMIxQ">YouTube</a><a class="btn gh" target="_blank" rel="noopener" href="https://makeinbvb.medium.com/">Medium</a></div><p class="sub" style="margin:18px 0 0">Email <a href="mailto:ctie@kletech.ac.in">ctie@kletech.ac.in</a> or call <a href="tel:+918362378321">+91 836 2378321</a>.<br>KLE CTIE, Startup Street, LHC R. H. Kulkarni Building, KLE Tech, Vidyanagar, Hubballi 580031. <a target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=KLE+Technological+University+Hubballi">Open in Maps</a></p></div>
+<div><h3 style="margin-bottom:8px">FAQ</h3><details><summary>Who can register?</summary><p>Each event lists its eligibility. Most are open to all BVB students.</p></details><details><summary>Is registration free?</summary><p>Yes, unless the event page says otherwise.</p></details><details><summary>Where is my ticket?</summary><p>Open Tickets in the top bar. Your passes are saved on this device.</p></details><details><summary>Can I join a team later?</summary><p>Register as an individual now and tell us your team at check-in, or pick Team while registering.</p></details></div></div></section>
+</main>
+<footer><div class="w"><span>Make In BVB (MIB) &middot; KLE CTIE, KLE Technological University, Hubballi. Built for the MIB Software Cluster challenge.</span><span><a href="#events">Events</a> &middot; <a href="#about">About</a> &middot; <a href="#contact">Contact</a></span></div></footer>
+<div class="ov" id="ov" hidden><div class="mo" role="dialog" aria-modal="true" aria-labelledby="mt"><button class="x" data-a="x" aria-label="Close">&times;</button><div id="mc"></div></div></div><div id="ts" role="status" aria-live="polite"></div>
+<script>
+const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)];
+const ls={g:(k,d)=>{try{const v=localStorage.getItem(k);return v?JSON.parse(v):d}catch{return d}},s:(k,v)=>{try{localStorage.setItem(k,JSON.stringify(v))}catch{}}};
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const hs=s=>{let h=5381;for(const c of s)h=(h*33^c.charCodeAt(0))>>>0;return h};
+/* Sample data: replace with real MIB events */
+const E=[
+{id:'recruit',t:'MIB Software Cluster Build Challenge',c:'Competition',s:'2026-09-23T10:00',e:'2026-10-03T18:00',v:'Online',d:'Pick one problem statement, build and deploy a website, and submit the live link to join the Software Cluster.',el:'All KLE Tech students',tm:'Solo',p:'',dl:'2026-10-02T23:59',cap:200,reg:120,tg:['Recruitment','Web'],u:'https://in.linkedin.com/company/makeinbvb'},
+{id:'ideation',t:'KLE Ideation Camp',c:'Workshop',s:'2026-10-17T09:30',e:'2026-10-17T17:00',v:'KLE Tech, BVB Campus',d:'Take an idea through ideation, validation, development and real-world testing, with buddy sessions and peer coaching.',el:'All branches, all years',tm:'Open',p:'',dl:'2026-10-14T23:59',cap:100,reg:44,tg:['Startups','Ideation'],u:'https://www.makeinbvb.com/'},
+{id:'butterfly',t:'Butterfly: B-Plan Pitching Competition',c:'Competition',s:'2026-10-31T10:00',e:'2026-10-31T17:00',v:'KLE CTIE, Startup Street',d:'Turn a problem into a value proposition and a revenue model, then pitch it to a panel.',el:'All branches, all years',tm:'Team (2-4)',p:'',dl:'2026-10-26T23:59',cap:60,reg:27,tg:['Pitching','Business plan'],u:'https://www.makeinbvb.com/'},
+{id:'esummit',t:'E-Summit',c:'Summit',s:'2026-11-20T09:30',e:'2026-11-21T17:00',v:'KLE Tech Auditorium',d:'Two days of keynotes and events with entrepreneurs, plus a shot at a cash prize and incubation.',el:'Open to everyone',tm:'Open',p:'Cash prize + incubation',dl:'2026-11-14T23:59',cap:400,reg:250,tg:['Entrepreneurs','Keynotes'],u:'https://www.makeinbvb.com/'},
+{id:'elvic',t:'ELVIC',c:'Competition',s:'2026-12-04T10:00',e:'2026-12-04T17:00',v:'KLE Tech, BVB Campus',d:'Interdisciplinary teams ideate smart solutions for civil engineering problems.',el:'All branches, all years',tm:'Team (2-4)',p:'',dl:'2026-11-27T23:59',cap:80,reg:30,tg:['Civil','Ideation'],u:'https://www.makeinbvb.com/'},
+{id:'pupa10',t:'PUPA: A Maker\u2019s Movement',c:'Flagship',s:'2027-02-27T09:00',e:'2027-02-27T18:00',v:'KLE Tech, BVB Campus',d:'Build a product in about a month with seed funding and mentors, then sell it on PUPA Day. Free to register.',el:'All branches and years, beginners welcome',tm:'Team (2-4)',p:'Seed funding',dl:'2026-10-20T23:59',cap:400,reg:330,tg:['Products','Seed funding'],u:'https://www.kletech.ac.in/events-detail/pupa/415'},
+{id:'pupa9',t:'PUPA 9th Edition',c:'Flagship',s:'2026-02-28T09:00',e:'2026-02-28T18:00',v:'KLE Tech, BVB Campus',d:'Flagship product-building event.',el:'All',tm:'Team (2-4)',p:'',dl:'2026-01-20T23:59',cap:1,reg:1,tg:['Products'],n:'Free to register, open to all branches and years',w:'PUPA Day: products demonstrated and sold to real users',img:'https://www.kletech.ac.in/Uploads/SmallImages/415rks-poster-banner-event.webp',u:'https://www.kletech.ac.in/events-detail/pupa/415'},
+{id:'pupa2223',t:'PUPA 2022-23',c:'Flagship',s:'2023-02-11T09:00',e:'2023-02-11T18:00',v:'KLE Tech, BVB Campus',d:'Flagship product-building event.',el:'All',tm:'Team (2-4)',p:'',dl:'2023-01-20T23:59',cap:1,reg:1,tg:['Products'],n:'A journey from about October 2022 to February 2023',w:'PUPA grew from 35 teams in 2013 to 400+ teams',u:'https://www.makeinbvb.com/'}];
+const CATS=['All','Flagship','Summit','Competition','Workshop'],TL=['Upcoming','Ongoing','Past'];
+const C={Flagship:{ag:[['Registration','Sign up your team of 2 to 4'],['Shortlisting','Team MIB reviews the ideas'],['Build phase','About a month with mentors and seed funding'],['PUPA Day','Showcase and sell your product']],pr:'Bring an idea, or ask for a problem statement. Beginners are welcome and both hardware and software projects are allowed.'},
+Summit:{ag:[['Day 1','Keynotes and sessions with entrepreneurs'],['Day 2','Business plan events and finals']],pr:'Carry your college ID. Some events need a separate team registration.'},
+Competition:{ag:[['Briefing','Rules and problem statements'],['Build window','Mentors available'],['Finals','Pitch or present to the judges']],pr:'Bring your team and college ID, and read the rules at the briefing.'},
+Workshop:{ag:[['Session 1','Framework and ideation'],['Session 2','Validation with buddy sessions'],['Wrap-up','Peer coaching and next steps']],pr:'Bring an idea, or come without one and find a team.'}};
+let S={q:'',c:'All',t:'Upcoming',sv:false},bms=ls.g('mib_bm',[]),tk=ls.g('mib_tk',[]).filter(t=>E.some(e=>e.id===t.eid));
+const fd=s=>new Date(s).toLocaleDateString('en-IN',{day:'numeric',month:'short',year:'numeric'}),ft=s=>new Date(s).toLocaleTimeString('en-IN',{hour:'numeric',minute:'2-digit'});
+const st=e=>{const n=Date.now();return +new Date(e.e)<n?'Past':+new Date(e.s)<=n?'Ongoing':'Upcoming'};
+const rs=e=>st(e)==='Past'||+new Date(e.dl)<Date.now()?['Closed','bc']:e.reg/e.cap>=.8?['Filling fast','bw']:['Open','bo'];
+const bn=e=>{const d=new Date(e.s);return`<div class="bn" style="--a:${100+hs(e.id)%80}deg">${e.img?`<img src="${e.img}" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">`:''}<b>${d.getDate()}</b><span>${d.toLocaleString('en-IN',{month:'short'})} ${d.getFullYear()}</span><i>${e.c}</i></div>`};
+const toast=m=>{const t=$('#ts');t.textContent=m;t.classList.add('on');clearTimeout(toast.i);toast.i=setTimeout(()=>t.classList.remove('on'),3000)};
+const cta=e=>{const t=tk.find(x=>x.eid===e.id),[r]=rs(e);return t?`<button class="btn" data-a="vt" data-id="${t.id}">View ticket</button>`:r==='Closed'?`<button class="btn" disabled>Registration closed</button>`:`<button class="btn" data-a="reg" data-id="${e.id}">Register now</button>`};
+const card=e=>{const[r,rc]=rs(e),b=bms.includes(e.id);return`<article class="card"><div style="position:relative">${bn(e)}<button class="bm" data-a="bm" data-id="${e.id}" aria-pressed="${b}" aria-label="${b?'Remove bookmark':'Bookmark'} ${esc(e.t)}">${b?'\u2665':'\u2661'}</button></div><div class="cb"><div class="bg"><span class="b">${e.c}</span><span class="b ${rc}">${r}</span></div><h3>${e.t}</h3><p>${e.d}</p><div class="mt"><span>${fd(e.s)}, ${ft(e.s)}</span><span>${e.v}</span><span>${e.el}</span></div><div class="ac"><button class="btn gh" data-a="vd" data-id="${e.id}">View details</button>${cta(e)}</div></div></article>`};
+const sub=(n,h)=>{let i=0;for(const c of h)if(c===n[i]&&++i===n.length)return 1;return 0};
+const mt=e=>{const h=(e.t+' '+e.c+' '+e.tg.join(' ')+' '+e.d).toLowerCase(),t=e.t.toLowerCase();return S.q.toLowerCase().split(/\s+/).filter(Boolean).every(w=>h.includes(w)||(w.length>2&&sub(w,t)))};
+function render(){
+$('#cats').innerHTML=CATS.map(c=>`<button class="pl ${S.c===c?'on':''}" data-a="cat" data-v="${c}">${c}</button>`).join('');
+$('#tls').innerHTML=TL.map(t=>`<button class="pl ${S.t===t?'on':''}" data-a="tl" data-v="${t}">${t}</button>`).join('');
+$('#svb').classList.toggle('on',S.sv);$('#sc').textContent=bms.length;$('#tc').textContent=tk.length;
+const l=E.filter(e=>st(e)===S.t&&(S.c==='All'||e.c===S.c)&&(!S.sv||bms.includes(e.id))&&mt(e)).sort((a,b)=>(S.t==='Past'?-1:1)*(new Date(a.s)-new Date(b.s)));
+$('#grid').innerHTML=l.length?l.map(card).join(''):`<div class="empty"><h3>No events match</h3><p>Try another keyword, or clear your filters to see everything.</p><button class="btn" data-a="clr">Clear filters</button></div>`;
+$('#cnt').textContent=l.length+(l.length===1?' event':' events');
+$('#past').innerHTML=E.filter(e=>st(e)==='Past').map(e=>`<article class="card">${bn(e)}<div class="cb"><h3>${e.t}</h3><p>${e.n} &middot; ${e.v}</p><a class="btn gh" target="_blank" rel="noopener" href="${e.u}">Read more</a></div><div class="win">${e.w}</div></article>`).join('')}
+const open=h=>{$('#mc').innerHTML=h;$('#ov').hidden=false;document.body.style.overflow='hidden';$('.x').focus()},close=()=>{$('#ov').hidden=true;document.body.style.overflow=''};
+const cd=s=>s.replace(/[-:]/g,'').slice(0,13)+'00';
+const calB=e=>`<a class="btn gh" target="_blank" rel="noopener" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(e.t)}&dates=${cd(e.s)}/${cd(e.e)}&ctz=Asia/Kolkata&location=${encodeURIComponent(e.v)}&details=${encodeURIComponent(e.d)}">Add to Google Calendar</a><button class="btn gh" data-a="ics" data-id="${e.id}">Download .ics</button>`;
+const bdg=e=>{const[r,rc]=rs(e);return`<div class="bg"><span class="b">${e.c}</span><span class="b ${rc}">${r}</span><span class="b">${st(e)}</span>${e.tg.map(x=>`<span class="b">${x}</span>`).join('')}</div>`};
+function detail(id){const e=E.find(x=>x.id===id),c=C[e.c];open(`${bn(e)}<h2 id="mt">${e.t}</h2>${bdg(e)}<p>${e.d}</p><dl class="mg"><div><dt>When</dt><dd>${fd(e.s)}, ${ft(e.s)} to ${fd(e.e)===fd(e.s)?ft(e.e):fd(e.e)+', '+ft(e.e)}</dd></div><div><dt>Venue</dt><dd>${e.v}</dd></div><div><dt>Eligibility</dt><dd>${e.el}</dd></div><div><dt>Participation</dt><dd>${e.tm}</dd></div>${e.p?`<div><dt>Prize pool</dt><dd>${e.p}</dd></div>`:''}<div><dt>Register by</dt><dd>${fd(e.dl)}</dd></div></dl><h3>Agenda</h3><ul class="ag">${c.ag.map(a=>`<li><b>${a[0]}</b>${a[1]}</li>`).join('')}</ul><h3>Before you come</h3><p>${c.pr}</p><div class="ac">${cta(e)}${calB(e)}<a class="btn gh" target="_blank" rel="noopener" href="${e.u}">Official page</a></div>`)}
+const fld=(n,l,t='text',o='')=>`<label>${l}<input name="${n}" type="${t}" ${o}><small class="er" data-e="${n}"></small></label>`;
+const sel=(n,l,a)=>`<label>${l}<select name="${n}"><option value="">Choose</option>${a.map(x=>`<option>${x}</option>`).join('')}</select><small class="er" data-e="${n}"></small></label>`;
+function regForm(id){const e=E.find(x=>x.id===id);open(`<h2 id="mt">Register for ${e.t}</h2><p style="color:var(--mu)">${fd(e.s)} &middot; ${e.v}</p><form id="rf" novalidate data-id="${id}">${fld('n','Full name','text','autocomplete="name"')}<div class="two">${fld('u','USN / roll number','text','placeholder="01FE23BCS001"')}${fld('e','Email','email','autocomplete="email"')}</div><div class="two">${sel('y','Year',['1st year','2nd year','3rd year','4th year'])}${sel('b','Branch',['CSE','ISE','ECE','EEE','Mechanical','Civil','Other'])}</div>${sel('tm','Participation',e.tm==='Solo'?['Individual']:['Individual','Team (2-4)'])}${fld('g','GitHub or LinkedIn link (optional)','url','placeholder="https://"')}<button class="btn">Confirm registration</button></form>`)}
+const chk=(f,r)=>{let ok=1;$$('[data-e]',f).forEach(x=>x.textContent='');for(const[n,bad,m]of r){if(bad(f.elements[n].value.trim())){$(`[data-e=${n}]`,f).textContent=m;if(ok)f.elements[n].focus();ok=0}}return ok};
+const EM=/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+const qr=s=>{let x=hs(s)||7,o='';for(let i=0;i<21;i++)for(let j=0;j<21;j++){let f=0,on;for(const[a,b]of[[0,0],[0,14],[14,0]]){const p=i-a,q=j-b;if(p>=0&&p<7&&q>=0&&q<7){f=1;on=Math.max(Math.abs(p-3),Math.abs(q-3))!==2}}if(!f){x^=x<<13;x^=x>>>17;x^=x<<5;x>>>=0;on=x&1}if(on)o+=`<rect x="${j}" y="${i}" width="1" height="1"/>`}return`<svg viewBox="-1 -1 23 23" role="img" aria-label="Pass code">${o}</svg>`};
+function ticket(t){const e=E.find(x=>x.id===t.eid);open(`<h2 id="mt">You're in, ${esc(t.name.split(' ')[0])}!</h2><div class="tk"><div><small>MIB Events pass</small><h3>${e.t}</h3><span>${fd(e.s)}, ${ft(e.s)}</span><span>${e.v}</span><span style="margin-top:10px;font-weight:600">${esc(t.name)} &middot; ${esc(t.usn)}</span><span>${t.tm}</span></div><div>${qr(t.id)}<code>${t.id}</code></div></div><div class="ac">${calB(e)}<button class="btn" data-a="x">Done</button></div>`)}
+function tickets(){open(`<h2 id="mt">My tickets</h2>${tk.length?tk.map(t=>`<button class="btn gh" style="width:100%;justify-content:space-between" data-a="vt" data-id="${t.id}"><span>${E.find(e=>e.id===t.eid).t}</span><code>${t.id}</code></button>`).join(''):'<p style="color:var(--mu)">No tickets yet. Register for an event and your pass will show up here.</p><button class="btn" data-a="x">Browse events</button>'}`);}
+function ics(e){const b=new Blob([`BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//MIB//Events//EN\r\nBEGIN:VEVENT\r\nUID:${e.id}@mib-events\r\nDTSTAMP:${new Date().toISOString().replace(/[-:.]/g,'').slice(0,15)}Z\r\nDTSTART:${cd(e.s)}\r\nDTEND:${cd(e.e)}\r\nSUMMARY:${e.t}\r\nLOCATION:${e.v}\r\nDESCRIPTION:${e.d}\r\nEND:VEVENT\r\nEND:VCALENDAR`],{type:'text/calendar'}),a=document.createElement('a');a.href=URL.createObjectURL(b);a.download=e.id+'.ics';a.click();toast('Calendar file downloaded')}
+const A={
+cat(b){S.c=b.dataset.v;render()},tl(b){S.t=b.dataset.v;render()},sv(){S.sv=!S.sv;render()},clr(){S={q:'',c:'All',t:'Upcoming',sv:false};$('#q').value='';render()},
+bm(b){const i=b.dataset.id;bms=bms.includes(i)?bms.filter(x=>x!==i):[...bms,i];ls.s('mib_bm',bms);toast(bms.includes(i)?'Saved to your list':'Removed from your list');render()},
+vd(b){detail(b.dataset.id)},reg(b){regForm(b.dataset.id)},vt(b){ticket(tk.find(t=>t.id===b.dataset.id))},tks:tickets,x:close,ics(b){ics(E.find(e=>e.id===b.dataset.id))},
+th(){const d=document.documentElement.dataset.t==='dark'?'light':'dark';document.documentElement.dataset.t=d;ls.s('mib_th',d)},
+mn(b){const o=$('#lk').classList.toggle('on');b.setAttribute('aria-expanded',o)},gl(b){$('#gal').scrollBy({left:300*b.dataset.v,behavior:'smooth'})}};
+document.addEventListener('click',ev=>{const b=ev.target.closest('[data-a]');if(b){A[b.dataset.a]?.(b);return}if(ev.target.id==='ov')close();if(ev.target.closest('#lk a'))$('#lk').classList.remove('on')});
+document.addEventListener('keydown',ev=>{if(ev.key==='Escape')close()});
+$('#q').addEventListener('input',ev=>{S.q=ev.target.value;render()});
+document.addEventListener('submit',ev=>{ev.preventDefault();const f=ev.target;
+if(f.id==='rf'){if(!chk(f,[['n',v=>v.length<2,'Enter your full name'],['u',v=>!/^[A-Za-z0-9]{8,15}$/.test(v),'Enter a valid USN, for example 01FE23BCS001'],['e',v=>!EM.test(v),'Enter a valid email address'],['y',v=>!v,'Choose your year'],['b',v=>!v,'Choose your branch'],['tm',v=>!v,'Choose how you will participate'],['g',v=>v&&!/^https?:\/\/\S+$/.test(v),'Enter a full link starting with https://']]))return;
+const g=n=>f.elements[n].value.trim(),t={id:'MIB-'+hs(f.dataset.id+g('u')+Date.now()).toString(36).toUpperCase().slice(0,6),eid:f.dataset.id,name:g('n'),usn:g('u').toUpperCase(),email:g('e'),tm:g('tm')};
+tk.push(t);ls.s('mib_tk',tk);const e=E.find(x=>x.id===t.eid);e.reg++;render();ticket(t);toast('Registration confirmed')}
+if(f.id==='cf'){if(!chk(f,[['n',v=>v.length<2,'Enter your name'],['e',v=>!EM.test(v),'Enter a valid email address'],['s',v=>v.length<3,'Add a short subject'],['m',v=>v.length<10,'Write at least 10 characters']]))return;const v=n=>f.elements[n].value.trim();location.href='mailto:ctie@kletech.ac.in?subject='+encodeURIComponent(v('s'))+'&body='+encodeURIComponent(v('m')+'\n\n'+v('n')+' ('+v('e')+')');f.reset();toast('Opening your email app to send it')}});
+document.documentElement.dataset.t=ls.g('mib_th',matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');
+function tick(){const n=E.filter(e=>st(e)!=='Past'&&+new Date(e.dl)>Date.now()).sort((a,b)=>new Date(a.dl)-new Date(b.dl))[0];if(!n){$('#cdw').hidden=true;return}
+let s=Math.max(0,(new Date(n.dl)-Date.now())/1e3|0);$('#cdt').textContent=n.t;$('#cdb').dataset.id=n.id;[['d',86400],['h',3600],['m',60],['s',1]].forEach(([k,u])=>{$('#'+k).textContent=Math.floor(s/u);s%=u})}
+tick();setInterval(tick,1000);render();
+$$('[data-n]').forEach(el=>{const n=+el.dataset.n,su=el.dataset.s,p=el.dataset.p||'',T=matchMedia('(prefers-reduced-motion:reduce)').matches?0:1200,t0=performance.now(),f=t=>{const k=T?Math.min(1,(t-t0)/T):1;el.textContent=p+(n>=1e5?Math.round(n*k/1e5*10)/10+'L':Math.round(n*k).toLocaleString('en-IN'))+su;k<1&&requestAnimationFrame(f)};requestAnimationFrame(f)});
+$('#gal').innerHTML=['PUPA: over 1000 people at the final showcase','E-Summit: keynotes from entrepreneurs','Butterfly: business plan pitching','Ideation Camp: buddy sessions and peer coaching','BVB-UMass student exchange','PUPA: 35 teams in 2013, 400+ today'].map((c,i)=>`<figure style="--a:${110+i*23}deg">${i?'':'<img src="https://www.kletech.ac.in/Uploads/SmallImages/415rks-poster-banner-event.webp" alt="PUPA poster" loading="lazy" onerror="this.remove()">'}<span>${c}</span></figure>`).join('');
+</script></body></html>
